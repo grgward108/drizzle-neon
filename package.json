@@ -1,0 +1,40 @@
+{
+    "name": "my-hono-serverless-app",
+    "version": "0.1.0",
+    "type": "module",
+    "private": true,
+    "engines": {
+      "node": ">=20"
+    },
+  
+    "scripts": {
+      "dev": "tsx watch src/app.ts",
+      "lint": "eslint . --ext .ts",
+      "typecheck": "tsc --noEmit",
+      "build": "tsc -p tsconfig.json",
+      "deploy": "zip -r lambda.zip dist && aws lambda update-function-code --function-name MyLambda --zip-file fileb://lambda.zip",
+  
+      "db:generate": "drizzle-kit generate:pg --schema=src/db/schema.ts",
+      "db:push": "drizzle-kit push:pg",
+      "db:studio": "drizzle-kit studio"
+    },
+  
+    "dependencies": {
+      "@neondatabase/serverless": "^0.9.0",
+      "drizzle-orm": "^0.29.4",
+      "hono": "^4.3.6",
+      "pg": "^8.11.5"
+    },
+  
+    "devDependencies": {
+      "@types/node": "^20.11.20",
+      "drizzle-kit": "^0.20.17",
+      "eslint": "^8.57.0",
+      "eslint-config-prettier": "^9.1.0",
+      "eslint-plugin-import": "^2.29.1",
+      "prettier": "^3.5.3",
+      "tsx": "^4.7.1",
+      "typescript": "^5.3.3"
+    }
+  }
+  
