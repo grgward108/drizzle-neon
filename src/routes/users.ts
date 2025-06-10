@@ -13,7 +13,7 @@ userRoutes.post('/', async (c) => {
   const body = await c.req.json();
   const inserted = await db
     .insert(users)
-    .values({ name: body.name })
+    .values({ name: body.name, email: body.email })
     .returning();
   return c.json(inserted[0]);
 });
