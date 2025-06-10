@@ -12,7 +12,6 @@
         "lint": "eslint . --ext .ts",
         "typecheck": "tsc --noEmit",
         "build": "tsc -p tsconfig.json",
-        "deploy": "zip -r lambda.zip dist && aws lambda update-function-code --function-name MyLambda --zip-file fileb://lambda.zip",
         "db:generate": "drizzle-kit generate",
         "db:push": "drizzle-kit push",
         "db:studio": "drizzle-kit studio"
