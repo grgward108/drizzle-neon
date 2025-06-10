@@ -7,8 +7,8 @@
         "node": ">=20"
     },
     "scripts": {
-        "dev": "bun --watch src/server.ts",
-        "start": "bun src/server.ts",
+        "dev": "bun --watch src/app.ts",
+        "start": "bun src/app.ts",
         "lint": "eslint . --ext .ts",
         "typecheck": "tsc --noEmit",
         "build": "tsc -p tsconfig.json",

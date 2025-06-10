@@ -21,4 +21,5 @@ app.get('/', (c) => {
 app.route('/api/users', userRoutes);
 app.route('/api/tasks', taskRoutes);
 
+// Export for Bun with port config
 export default app;
